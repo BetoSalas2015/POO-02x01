@@ -3,7 +3,7 @@
  * Objeto que representa la Abstracción del Objeto Hora.
  * 
  * @author Roberto Salazar Márquez
- * @version 1.0
+ * @version 1.1
  */
 public class Hora
 {
@@ -32,7 +32,7 @@ public class Hora
     public Hora(int h)
     {
         // initialise instance variables
-        setHoras(h);
+        setHora(h);
         setMinutos(0);
         setSegundos(0);
     }
@@ -45,7 +45,7 @@ public class Hora
     public Hora(int h, int m)
     {
         // initialise instance variables
-        setHoras(h);
+        setHora(h);
         setMinutos(m);
         setSegundos(0);
     }
@@ -58,7 +58,7 @@ public class Hora
     public Hora(int h, int m, int s)
     {
         // initialise instance variables
-        setHoras(h);
+        setHora(h);
         setMinutos(m);
         setSegundos(s);
     }
@@ -70,7 +70,7 @@ public class Hora
      * @param      h       Nueva hora para asignar
      * @return     Nada. 
      */
-    public void setHoras(int h)
+    public void setHora(int h)
     {
         horas = (h >= 0 && h <= 23) ? h : 0;
     }
@@ -91,7 +91,7 @@ public class Hora
      * Este método recibe un nuevo minuto para el objeto
      * El nuevo minuto deberá estar entre 0 y 59.
      * 
-     * @param      m       Nuevo minuto para asignar
+     * @param      s       Nuevo segundo para asignar
      * @return     Nada. 
      */
     public void setSegundos(int s)
@@ -132,6 +132,30 @@ public class Hora
         return segundos;
     }
     
+    /**
+     * Este método recibe una nueva hora modificando los atributos preexistentes
+     * La nueva hora deberá estar entre 0 y 23
+     * El nuevo minutos y segundos deberá estar entre 0 y 59.
+     * 
+     * @param       h       Nueva hora para asignar
+     * @param       m       Nuevos minutos para asignar
+     * @param       s       Nuevos para asignar
+     * @return      Nada. 
+     */
+    public void setHoras(int h, int m, int s)
+    {
+        setHora(h);
+        setMinutos(m);
+        setSegundos(s);
+    }
+       
+    /**
+     * Este método recibe convierte los atributos del objeto a una cadena con formato AM-PM
+     * El nuevo minuto deberá estar entre 0 y 59.
+     * 
+     * @param      Nada
+     * @return     Una cadena que representa la Hora con el formato AM-PM. 
+     */
     public String toString()
     {
         return ((horas == 12  || horas == 0) ? 12 : horas % 12) +

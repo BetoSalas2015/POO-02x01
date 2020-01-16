@@ -55,7 +55,25 @@ public class TestHora
         Hora hora1 = new Hora(99, 99, 99);
         assertEquals("12:00:00 AM", hora1.toString());
     }
+
+    @Test
+    public void testCase06()
+    {
+        Hora hora1 = new Hora(13, 44, 12);
+        hora1.setHoras(22, 12, 12);
+        assertEquals("10:12:12 PM", hora1.toString());
+    }
+
+    @Test
+    public void testCase07()
+    {
+        Hora hora1 = new Hora();
+        hora1.setHoras(99, 99, 99);
+        assertEquals("12:00:00 AM", hora1.toString());
+    }
 }
+
+
 
 
 
