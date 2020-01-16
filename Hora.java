@@ -163,5 +163,28 @@ public class Hora
                  ":" + (segundos < 10 ? "0" : "") + segundos +
                  (horas < 12 ? " AM" : " PM");
     }
+    
+    /**
+     * Este método incrementa en 1 l atributo segundos actualizando la hora dntro del formato apropiado.
+     * 
+     * @param      Nada
+     * @return     Nada 
+     */
+    public void tick()
+    {
+        segundos++;
+        if(segundos > 59) {
+            segundos = 0;
+            minutos++;
+        }
+        if(minutos > 59) {
+            minutos = 0;
+            horas++;
+        }
+        if(horas > 23) {
+            horas = 0;
+        }
+    }
+    
 
 }
